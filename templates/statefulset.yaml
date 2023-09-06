@@ -115,7 +115,7 @@ spec:
 {{- end }}
       - name: server
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        image: "{{ .Values.image.repository }}@{{ .Values.image.version }}"
+        image: "{{ .Values.image.repository }}@{{ .Values.image.digest }}"
         command:
         - bash
         - -ce
