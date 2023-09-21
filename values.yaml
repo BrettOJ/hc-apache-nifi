@@ -349,16 +349,6 @@ extraOptions: []
 #   - secretRef:
 #       name: mysecret
 
-## Openshift support
-## Use the following varables in order to enable Route and Security Context Constraint creation
-openshift:
-  scc:
-    enabled: false
-  route:
-    enabled: false
-    #host: www.test.com
-    #path: /nifi
-
 # ca server details
 # Setting this true would create a nifi-toolkit based ca server
 # The ca server will be used to generate self-signed certificates required setting up secured cluster
@@ -376,9 +366,7 @@ ca:
   serviceAccount:
     create: false
     #name: nifi-ca
-  openshift:
-    scc:
-      enabled: false
+
 
 # cert-manager support
 # Setting this true will have cert-manager create a private CA for the cluster
@@ -409,29 +397,6 @@ certManager:
   # c.f. https://github.com/cert-manager/cert-manager/issues/2478#issuecomment-1095545529
   certDuration: 2160h
   caDuration: 87660h
-
-# ------------------------------------------------------------------------------
-# Zookeeper:
-# ------------------------------------------------------------------------------
-zookeeper:
-  ## If true, install the Zookeeper chart
-  ## ref: https://github.com/bitnami/charts/blob/master/bitnami/zookeeper/values.yaml
-  enabled: false
-  ## If the Zookeeper Chart is disabled a URL and port are required to connect
-  url: ""
-  port: 2181
-  replicaCount: 3
-
-# ------------------------------------------------------------------------------
-# Nifi registry:
-# ------------------------------------------------------------------------------
-registry:
-  ## If true, install the Nifi registry
-  enabled: false
-  url: ""
-  port: 80
-  ## Add values for the nifi-registry here
-  ## ref: https://github.com/dysnix/charts/blob/main/dysnix/nifi-registry/values.yaml
 
 # Configure metrics
 metrics:
