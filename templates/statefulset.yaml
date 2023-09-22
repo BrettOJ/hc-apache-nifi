@@ -90,7 +90,7 @@ spec:
 {{- if .Values.properties.isNode }}
       - name: zookeeper
         imagePullPolicy: {{ .Values.sidecar.imagePullPolicy | default "Always" | quote }}
-        image: "{{ .Values.sidecar.image }}:{{ .Values.sidecar.tag }}"
+        image: "{{ .Values.sidecar.image }}@{{ .Values.sidecar.digest }}"
         command:
         - sh
         - -c

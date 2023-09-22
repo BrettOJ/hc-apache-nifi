@@ -235,6 +235,7 @@ jvmMemory: 2g
 sidecar:
   image: busybox
   tag: "1.32.0"
+  digest: "sha256:26563366342966805ce929b0ef9848bea48f28dd1702ad9208e3da6c6f5fc693"
   imagePullPolicy: "IfNotPresent"
 
 ## Enable persistence using Persistent Volume Claims
