@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "konjur-nifi-helm.fullname" . }}-test-connection"
+  labels:
+    {{- include "konjur-nifi-helm.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "konjur-nifi-helm.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
